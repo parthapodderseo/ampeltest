@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AMPLE — HVAC and refrigeration products, components and industrial cooling solutions.">
+  <title>AMPLE | HVAC & Refrigeration Supply</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { ample: { orange: '#F47721', ink: '#151515', soft: '#FFF3EA' } },
+        fontFamily: { sans: ['Inter', 'Arial', 'sans-serif'] }
+      }}
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .hero-bg { background: radial-gradient(circle at 78% 45%, rgba(244,119,33,.24), transparent 30%), linear-gradient(115deg,#151515 0%,#222 58%,#34302d 100%); }
+    .product-img { background: linear-gradient(145deg,#f5f5f5,#e7e7e7); }
+    .category-card:hover, .product-card:hover { transform: translateY(-4px); box-shadow: 0 16px 35px rgba(0,0,0,.09); }
+    .category-card, .product-card { transition: .2s ease; }
+    .menu-open { display: flex !important; }
+  </style>
+</head>
+<body class="bg-white text-slate-800 font-sans">
+  <!-- Announcement -->
+  <div class="bg-ample-orange text-white text-center text-xs sm:text-sm font-semibold py-2 px-4">
+    Your complete HVAC & refrigeration supply partner
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="h-20 flex items-center justify-between gap-5">
+        <a href="#" class="flex items-center gap-2 shrink-0" aria-label="AMPLE home">
+          <span class="text-3xl font-black tracking-tight text-ample-ink">AMPL<span class="text-ample-orange">E</span></span>
+        </a>
+        <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-700">
+          <a class="hover:text-ample-orange" href="#categories">Categories</a>
+          <a class="hover:text-ample-orange" href="#products">Products</a>
+          <a class="hover:text-ample-orange" href="#solutions">Solutions</a>
+          <a class="hover:text-ample-orange" href="#knowledge">Knowledge Centre</a>
+          <a class="hover:text-ample-orange" href="#contact">Contact</a>
+        </nav>
+        <div class="hidden md:flex items-center gap-3">
+          <label class="relative">
+            <span class="sr-only">Search products</span>
+            <input id="searchInput" type="search" placeholder="Search products..." class="w-48 xl:w-64 rounded-lg border border-slate-300 py-2.5 pl-4 pr-10 text-sm outline-none focus:border-ample-orange">
+            <span class="absolute right-3 top-2.5 text-slate-400">⌕</span>
+          </label>
+          <button id="cartButton" class="relative rounded-lg bg-ample-ink text-white px-4 py-2.5 text-sm font-semibold hover:bg-ample-orange transition">
+            Cart <span id="cartCount" class="ml-1 rounded-full bg-white text-ample-ink px-2 py-0.5 text-xs">0</span>
+          </button>
+        </div>
+        <button id="mobileMenuButton" class="lg:hidden text-2xl p-2" aria-label="Open menu">☰</button>
+      </div>
+      <nav id="mobileMenu" class="hidden flex-col gap-4 pb-5 text-sm font-semibold lg:hidden">
+        <a href="#categories">Categories</a><a href="#products">Products</a><a href="#solutions">Solutions</a><a href="#knowledge">Knowledge Centre</a><a href="#contact">Contact</a>
+        <input id="mobileSearch" type="search" placeholder="Search products..." class="rounded-lg border border-slate-300 p-3">
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero-bg text-white overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold tracking-widest uppercase mb-6">
+            <span class="h-2 w-2 rounded-full bg-ample-orange"></span> HVAC • Refrigeration • Industrial Cooling
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.08] tracking-tight">Everything HVAC & Refrigeration <span class="text-ample-orange">Under One Roof.</span></h1>
+          <p class="mt-6 max-w-xl text-base sm:text-lg leading-8 text-slate-300">Find the equipment, components and spare parts that keep your cooling systems running. Explore products for projects, industry and everyday maintenance.</p>
+          <div class="mt-9 flex flex-wrap gap-3">
+            <a href="#products" class="rounded-lg bg-ample-orange px-7 py-3.5 font-bold text-white hover:bg-orange-600 transition">Shop Products <span aria-hidden="true">→</span></a>
+            <a href="#categories" class="rounded-lg border border-white/40 px-7 py-3.5 font-bold text-white hover:bg-white hover:text-ample-ink transition">Explore Categories</a>
+          </div>
+          <div class="mt-10 flex flex-wrap gap-x-7 gap-y-3 text-sm text-slate-300">
+            <span>✓ Product-focused sourcing</span><span>✓ Bulk order support</span><span>✓ Technical assistance</span>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="absolute -inset-5 rounded-3xl bg-ample-orange/20 blur-2xl"></div>
+          <div class="relative rounded-3xl border border-white/10 bg-white/10 p-5 backdrop-blur-sm">
+            <div class="grid grid-cols-2 gap-4">
+              <div class="col-span-2 rounded-2xl bg-gradient-to-br from-slate-200 to-slate-400 p-7 text-ample-ink min-h-44 flex flex-col justify-between">
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-600">Industrial cooling</span>
+                <div class="flex justify-between items-end"><span class="text-3xl font-black">CHILLERS</span><span class="text-5xl">❄</span></div>
+              </div>
+              <div class="rounded-2xl bg-gradient-to-br from-orange-100 to-orange-300 p-5 text-ample-ink min-h-36 flex flex-col justify-between">
+                <span class="text-xs font-bold uppercase tracking-widest">Refrigeration</span><span class="text-4xl">⚙</span><strong class="text-lg">COMPRESSORS</strong>
+              </div>
+              <div class="rounded-2xl bg-gradient-to-br from-slate-100 to-slate-300 p-5 text-ample-ink min-h-36 flex flex-col justify-between">
+                <span class="text-xs font-bold uppercase tracking-widest">Air systems</span><span class="text-4xl">〰</span><strong class="text-lg">AIR SIDE</strong>
+              </div>
+            </div>
+            <p class="mt-4 text-center text-xs tracking-wide text-slate-300">A simpler way to source HVAC & refrigeration products</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="border-b border-slate-200 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 grid grid-cols-2 md:grid-cols-4 gap-5 text-center">
+        <div><div class="text-ample-orange text-2xl">✓</div><p class="font-bold text-sm">Quality-focused products</p></div>
+        <div><div class="text-ample-orange text-2xl">◇</div><p class="font-bold text-sm">Competitive pricing</p></div>
+        <div><div class="text-ample-orange text-2xl">⚙</div><p class="font-bold text-sm">Technical information</p></div>
+        <div><div class="text-ample-orange text-2xl">▣</div><p class="font-bold text-sm">Bulk order assistance</p></div>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section id="categories" class="py-16 sm:py-20 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-wrap justify-between items-end gap-4 mb-9">
+          <div><p class="text-ample-orange font-bold text-xs tracking-[.2em] uppercase">Browse our range</p><h2 class="mt-2 text-3xl sm:text-4xl font-black text-ample-ink">Shop by Category</h2><p class="mt-2 text-slate-500">Find the right products for your cooling and HVAC needs.</p></div>
+          <a href="#products" class="font-bold text-sm text-ample-orange hover:underline">View products →</a>
+        </div>
+        <div id="categoryGrid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+          <a href="#products" class="category-card rounded-xl border border-slate-200 bg-white p-5"><span class="text-3xl">❄</span><h3 class="mt-4 font-bold">Chillers & Spare Parts</h3><p class="mt-1 text-xs text-slate-500">Cooling equipment & parts</p></a>
+          <a href="#products" class="category-card rounded-xl border border-slate-200 bg-white p-5"><span class="text-3xl">⚙</span><h3 class="mt-4 font-bold">Compressors</h3><p class="mt-1 text-xs text-slate-500">Reliable cooling components</p></a>
+          <a href="#products" class="category-card rounded-xl border border-slate-200 bg-white p-5"><span class="text-3xl">〰</span><h3 class="mt-4 font-bold">Refrigeration Components</h3><p class="mt-1 text-xs text-slate-500">Essential system components</p></a>
+          <a href="#products" class="category-card rounded-xl border border-slate-200 bg-white p-5"><span class="text-3xl">▦</span><h3 class="mt-4 font-bold">HVAC Equipment</h3><p class="mt-1 text-xs text-slate-500">Equipment for every application</p></a>
+          <a href="#products" class="category-card rounded-xl border border-slate-200 bg-white p-5"><span class="text-3xl">▤</span><h3 class="mt-4 font-bold">AHU & FCU</h3><p class="mt-1 text-xs text-slate-500">Air handling solutions</p></a>
+          <a href="#products" class="category-card rounded-xl border border-slate-200 bg-white p-5"><span class="text-3xl">◉</span><h3 class="mt-4 font-bold">Air-Side Products</h3><p class="mt-1 text-xs text-slate-500">Grilles, diffusers & dampers</p></a>
+          <a href="#products" class="category-card rounded-xl border border-slate-200 bg-white p-5"><span class="text-3xl">⌁</span><h3 class="mt-4 font-bold">Copper Pipes & Fittings</h3><p class="mt-1 text-xs text-slate-500">Pipes, fittings & accessories</p></a>
+          <a href="#products" class="category-card rounded-xl border border-slate-200 bg-white p-5"><span class="text-3xl">◈</span><h3 class="mt-4 font-bold">Valves & Controls</h3><p class="mt-1 text-xs text-slate-500">Control and flow components</p></a>
+        </div>
+        <p class="mt-5 text-xs text-slate-500">Also available: Refrigerants & Oil, Pumps & Motors, Coils, Insulation, Electrical & Automation, Tools, Cold Room Equipment, Cooling Towers and Filters.</p>
+      </div>
+    </section>
+
+    <!-- Products -->
+    <section id="products" class="py-16 sm:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-wrap justify-between items-end gap-4 mb-9">
+          <div><p class="text-ample-orange font-bold text-xs tracking-[.2em] uppercase">Product selection</p><h2 class="mt-2 text-3xl sm:text-4xl font-black text-ample-ink">Featured Products</h2><p class="mt-2 text-slate-500">Explore a sample of products for your next project.</p></div>
+          <span class="text-xs text-slate-400">Sample products • Demonstration prices</span>
+        </div>
+        <div id="productGrid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <article class="product-card border border-slate-200 rounded-xl overflow-hidden" data-name="scroll refrigeration compressor">
+            <div class="product-img h-48 flex items-center justify-center text-7xl">⚙</div>
+            <div class="p-4"><p class="text-xs text-ample-orange font-bold uppercase">Compressors</p><h3 class="mt-2 font-bold text-ample-ink">Scroll Refrigeration Compressor</h3><p class="mt-1 text-xs text-slate-500">Model: Demo-SC-01</p><div class="mt-4 flex items-center justify-between"><strong class="text-lg">৳ 45,000</strong><button class="add-cart rounded-lg bg-ample-ink text-white px-3 py-2 text-xs font-bold hover:bg-ample-orange" data-name="Scroll Refrigeration Compressor" data-price="45000">Add to Cart</button></div></div>
+          </article>
+          <article class="product-card border border-slate-200 rounded-xl overflow-hidden" data-name="industrial chiller spare parts">
+            <div class="product-img h-48 flex items-center justify-center text-7xl">❄</div>
+            <div class="p-4"><p class="text-xs text-ample-orange font-bold uppercase">Chillers</p><h3 class="mt-2 font-bold text-ample-ink">Industrial Chiller Components</h3><p class="mt-1 text-xs text-slate-500">Model: Demo-CH-02</p><div class="mt-4 flex items-center justify-between"><strong class="text-lg">৳ 18,500</strong><button class="add-cart rounded-lg bg-ample-ink text-white px-3 py-2 text-xs font-bold hover:bg-ample-orange" data-name="Industrial Chiller Components" data-price="18500">Add to Cart</button></div></div>
+          </article>
+          <article class="product-card border border-slate-200 rounded-xl overflow-hidden" data-name="refrigeration expansion valve">
+            <div class="product-img h-48 flex items-center justify-center text-7xl">◈</div>
+            <div class="p-4"><p class="text-xs text-ample-orange font-bold uppercase">Valves & Controls</p><h3 class="mt-2 font-bold text-ample-ink">Thermostatic Expansion Valve</h3><p class="mt-1 text-xs text-slate-500">Model: Demo-TV-03</p><div class="mt-4 flex items-center justify-between"><strong class="text-lg">৳ 6,800</strong><button class="add-cart rounded-lg bg-ample-ink text-white px-3 py-2 text-xs font-bold hover:bg-ample-orange" data-name="Thermostatic Expansion Valve" data-price="6800">Add to Cart</button></div></div>
+          </article>
+          <article class="product-card border border-slate-200 rounded-xl overflow-hidden" data-name="copper refrigeration fittings">
+            <div class="product-img h-48 flex items-center justify-center text-7xl">〰</div>
+            <div class="p-4"><p class="text-xs text-ample-orange font-bold uppercase">Pipes & Fittings</p><h3 class="mt-2 font-bold text-ample-ink">Copper Refrigeration Fittings</h3><p class="mt-1 text-xs text-slate-500">Model: Demo-CP-04</p><div class="mt-4 flex items-center justify-between"><strong class="text-lg">৳ 1,250</strong><button class="add-cart rounded-lg bg-ample-ink text-white px-3 py-2 text-xs font-bold hover:bg-ample-orange" data-name="Copper Refrigeration Fittings" data-price="1250">Add to Cart</button></div></div>
+          </article>
+        </div>
+        <p id="noResults" class="hidden mt-6 text-center text-slate-500">No sample products match your search.</p>
+      </div>
+    </section>
+
+    <!-- Solutions -->
+    <section id="solutions" class="bg-ample-ink text-white py-16 sm:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+        <div><p class="text-ample-orange font-bold text-xs tracking-[.2em] uppercase">For every application</p><h2 class="mt-3 text-3xl sm:text-4xl font-black">Cooling Solutions for Your Industry</h2><p class="mt-5 text-slate-300 leading-7">From commercial air conditioning to industrial process cooling, AMPLE helps you explore the products and components your application needs.</p><a href="#contact" class="inline-block mt-7 rounded-lg bg-ample-orange px-6 py-3 font-bold hover:bg-orange-600">Talk to Our Team →</a></div>
+        <div class="grid grid-cols-2 gap-3">
+          <div class="rounded-xl bg-white/10 p-5"><span class="text-3xl">🏭</span><h3 class="mt-4 font-bold">Industrial Cooling</h3></div>
+          <div class="rounded-xl bg-white/10 p-5"><span class="text-3xl">💊</span><h3 class="mt-4 font-bold">Pharmaceutical</h3></div>
+          <div class="rounded-xl bg-white/10 p-5"><span class="text-3xl">🏢</span><h3 class="mt-4 font-bold">Commercial HVAC</h3></div>
+          <div class="rounded-xl bg-white/10 p-5"><span class="text-3xl">🧊</span><h3 class="mt-4 font-bold">Cold Storage</h3></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bulk order -->
+    <section class="py-16 sm:py-20 bg-ample-soft">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
+        <div><p class="text-ample-orange font-bold text-xs tracking-[.2em] uppercase">Business customers</p><h2 class="mt-3 text-3xl sm:text-4xl font-black text-ample-ink">Need Products in Bulk?</h2><p class="mt-4 text-slate-600 leading-7">Tell us what your project or facility needs. Our team can help you identify the right HVAC and refrigeration products.</p><p class="mt-5 text-sm font-semibold text-slate-700">For contractors, factories, facilities and resellers.</p></div>
+        <form id="bulkForm" class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-orange-100 grid sm:grid-cols-2 gap-4">
+          <input required placeholder="Your name" class="rounded-lg border border-slate-300 p-3 text-sm outline-none focus:border-ample-orange">
+          <input required placeholder="Company name" class="rounded-lg border border-slate-300 p-3 text-sm outline-none focus:border-ample-orange">
+          <input required type="email" placeholder="Email address" class="rounded-lg border border-slate-300 p-3 text-sm outline-none focus:border-ample-orange">
+          <input required type="tel" placeholder="Phone number" class="rounded-lg border border-slate-300 p-3 text-sm outline-none focus:border-ample-orange">
+          <input placeholder="Product / category" class="sm:col-span-2 rounded-lg border border-slate-300 p-3 text-sm outline-none focus:border-ample-orange">
+          <textarea placeholder="Quantity and requirements" rows="3" class="sm:col-span-2 rounded-lg border border-slate-300 p-3 text-sm outline-none focus:border-ample-orange"></textarea>
+          <button class="sm:col-span-2 rounded-lg bg-ample-orange text-white py-3 font-bold hover:bg-orange-600">Send Inquiry</button>
+          <p id="formMessage" class="hidden sm:col-span-2 text-sm text-green-700">Thanks! This demo form is ready for backend connection.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Knowledge -->
+    <section id="knowledge" class="py-16 sm:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="text-ample-orange font-bold text-xs tracking-[.2em] uppercase">Learn & explore</p><h2 class="mt-2 text-3xl sm:text-4xl font-black text-ample-ink">HVAC Knowledge Centre</h2><p class="mt-2 text-slate-500">Helpful topics for product selection and system understanding.</p>
+        <div class="mt-8 grid md:grid-cols-3 gap-5">
+          <article class="rounded-xl border border-slate-200 p-6"><span class="text-3xl">⚙</span><p class="mt-5 text-xs text-ample-orange font-bold uppercase">Compressors</p><h3 class="mt-2 text-lg font-bold">How to Select an HVAC Compressor</h3><p class="mt-2 text-sm text-slate-500">Understand the key factors involved in choosing a compressor for an application.</p></article>
+          <article class="rounded-xl border border-slate-200 p-6"><span class="text-3xl">❄</span><p class="mt-5 text-xs text-ample-orange font-bold uppercase">Chillers</p><h3 class="mt-2 text-lg font-bold">Understanding Chiller Capacity</h3><p class="mt-2 text-sm text-slate-500">A starting point for understanding cooling capacity and application requirements.</p></article>
+          <article class="rounded-xl border border-slate-200 p-6"><span class="text-3xl">〰</span><p class="mt-5 text-xs text-ample-orange font-bold uppercase">Air systems</p><h3 class="mt-2 text-lg font-bold">AHU vs FCU: The Basics</h3><p class="mt-2 text-sm text-slate-500">Explore the basic differences between two common HVAC air-side systems.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="contact" class="pb-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="rounded-2xl bg-ample-orange px-7 py-10 sm:p-12 text-white flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+          <div><h2 class="text-2xl sm:text-3xl font-black">Let's find the right solution.</h2><p class="mt-2 text-white/90">Need help choosing HVAC or refrigeration products? Get in touch with AMPLE.</p></div>
+          <a href="mailto:info@example.com" class="shrink-0 rounded-lg bg-white text-ample-ink px-6 py-3 font-bold hover:bg-slate-100">Contact AMPLE</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#111] text-slate-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-9">
+      <div><div class="text-3xl font-black text-white">AMPL<span class="text-ample-orange">E</span></div><p class="mt-4 text-sm leading-6 text-slate-400">Your complete HVAC and refrigeration product sourcing destination.</p></div>
+      <div><h3 class="font-bold text-white">Shop</h3><ul class="mt-4 space-y-2 text-sm"><li><a href="#categories" class="hover:text-ample-orange">Product Categories</a></li><li><a href="#products" class="hover:text-ample-orange">Featured Products</a></li><li><a href="#products" class="hover:text-ample-orange">All Products</a></li></ul></div>
+      <div><h3 class="font-bold text-white">Support</h3><ul class="mt-4 space-y-2 text-sm"><li><a href="#contact" class="hover:text-ample-orange">Contact Us</a></li><li><a href="#knowledge" class="hover:text-ample-orange">Knowledge Centre</a></li><li><a href="#contact" class="hover:text-ample-orange">Bulk Orders</a></li></ul></div>
+      <div><h3 class="font-bold text-white">Business</h3><ul class="mt-4 space-y-2 text-sm"><li><a href="#contact" class="hover:text-ample-orange">About AMPLE</a></li><li><a href="#contact" class="hover:text-ample-orange">Become a Vendor</a></li><li><a href="#contact" class="hover:text-ample-orange">Business Inquiries</a></li></ul></div>
+    </div>
+    <div class="border-t border-white/10 py-5 text-center text-xs text-slate-500">© <span id="year"></span> AMPLE. All rights reserved. <span class="mx-2">|</span> Version 1 demo storefront</div>
+  </footer>
+
+  <!-- Cart drawer -->
+  <div id="cartPanel" class="hidden fixed inset-0 z-[60]">
+    <div id="cartBackdrop" class="absolute inset-0 bg-black/50"></div>
+    <aside class="absolute right-0 top-0 h-full w-full max-w-md bg-white p-6 shadow-2xl overflow-y-auto">
+      <div class="flex justify-between items-center"><h2 class="text-2xl font-black">Your Cart</h2><button id="closeCart" class="text-2xl" aria-label="Close cart">×</button></div>
+      <div id="cartItems" class="mt-6 space-y-4"></div>
+      <div class="border-t mt-6 pt-5"><div class="flex justify-between font-bold"><span>Subtotal</span><span id="cartSubtotal">৳ 0</span></div><p class="mt-3 text-xs text-slate-500">Demo cart only. Online checkout is not connected in Version 1.</p></div>
+    </aside>
+  </div>
+
+  <script>
+    const cart = [];
+    const money = value => '৳ ' + Number(value).toLocaleString('en-BD');
+    const cartPanel = document.getElementById('cartPanel');
+    const cartCount = document.getElementById('cartCount');
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.getElementById('mobileMenuButton').addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.toggle('menu-open');
+    });
+
+    function renderCart() {
+      const count = cart.reduce((sum, item) => sum + item.qty, 0);
+      cartCount.textContent = count;
+      document.getElementById('cartItems').innerHTML = cart.length
+        ? cart.map((item, i) => `<div class="flex justify-between gap-4 border-b pb-4"><div><p class="font-semibold text-sm">${item.name}</p><p class="text-xs text-slate-500 mt-1">${money(item.price)} × ${item.qty}</p><div class="mt-2 flex gap-2"><button data-action="minus" data-index="${i}" class="border rounded px-2">−</button><button data-action="plus" data-index="${i}" class="border rounded px-2">+</button><button data-action="remove" data-index="${i}" class="text-xs text-red-600 ml-2">Remove</button></div></div><strong class="text-sm">${money(item.price * item.qty)}</strong></div>`).join('')
+        : '<p class="text-sm text-slate-500">Your cart is empty.</p>';
+      document.getElementById('cartSubtotal').textContent = money(cart.reduce((sum, item) => sum + item.price * item.qty, 0));
+    }
+
+    document.querySelectorAll('.add-cart').forEach(button => button.addEventListener('click', () => {
+      const name = button.dataset.name;
+      const price = Number(button.dataset.price);
+      const existing = cart.find(item => item.name === name);
+      if (existing) existing.qty++;
+      else cart.push({ name, price, qty: 1 });
+      renderCart();
+      button.textContent = 'Added ✓';
+      setTimeout(() => button.textContent = 'Add to Cart', 900);
+    }));
+
+    document.getElementById('cartButton').addEventListener('click', () => { cartPanel.classList.remove('hidden'); renderCart(); });
+    document.getElementById('closeCart').addEventListener('click', () => cartPanel.classList.add('hidden'));
+    document.getElementById('cartBackdrop').addEventListener('click', () => cartPanel.classList.add('hidden'));
+
+    document.getElementById('cartItems').addEventListener('click', event => {
+      const button = event.target.closest('button[data-action]');
+      if (!button) return;
+      const item = cart[Number(button.dataset.index)];
+      if (button.dataset.action === 'plus') item.qty++;
+      if (button.dataset.action === 'minus') item.qty--;
+      if (button.dataset.action === 'remove' || item.qty <= 0) cart.splice(Number(button.dataset.index), 1);
+      renderCart();
+    });
+
+    function filterProducts(query) {
+      const normalized = query.trim().toLowerCase();
+      let visible = 0;
+      document.querySelectorAll('.product-card').forEach(card => {
+        const match = card.dataset.name.includes(normalized) || card.innerText.toLowerCase().includes(normalized);
+        card.classList.toggle('hidden', !match);
+        if (match) visible++;
+      });
+      document.getElementById('noResults').classList.toggle('hidden', visible > 0);
+    }
+    document.getElementById('searchInput').addEventListener('input', e => filterProducts(e.target.value));
+    document.getElementById('mobileSearch').addEventListener('input', e => {
+      filterProducts(e.target.value);
+      document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    document.getElementById('bulkForm').addEventListener('submit', event => {
+      event.preventDefault();
+      document.getElementById('formMessage').classList.remove('hidden');
+      event.target.reset();
+    });
+  </script>
+</body>
+</html>
